@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:JARdineria"
+             x:Class="JARdineria.Plantas" Title="MIS PLANTAS" BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+        <local:MiJardin x:Name="Jardin"></local:MiJardin>
+    </ContentPage.BindingContext>
+
+
+    <StackLayout>
+        <CollectionView ItemsSource="{Binding  Miplanta}" Margin="5,0"  >
+            <CollectionView.ItemTemplate>
+                <DataTemplate >
+                    <Grid RowSpacing="4" ColumnSpacing="4"  >
+                        <Grid.Resources >
+                            <Style TargetType="Label">
+                                <Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+                                <Setter Property="Margin" Value="0"></Setter>
+                                <Setter Property="FontSize" Value="Large"></Setter>
+                                <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+                                <Setter Property="Opacity" Value="0.8"></Setter>
+                                <Setter Property="FontSize" Value="15"></Setter>
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition ></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition ></ColumnDefinition>
+                            <ColumnDefinition ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Row="0"  Grid.ColumnSpan="2" >
+                            <BoxView Color="Green" HeightRequest="4" VerticalOptions="StartAndExpand" ></BoxView>
+                            <Label Text="{Binding  Nombre}" ></Label>
+
+                        </StackLayout>
+                        <BoxView Grid.ColumnSpan="2" Grid.Row="1" Color="Green" HeightRequest="2" VerticalOptions="StartAndExpand"  Margin="20,0" Opacity="0.2"></BoxView>
+                        <Label Text="Fecha de plantado: " Grid.Column="0" Grid.Row="1"></Label>
+                        <DatePicker Date="{Binding FechaPlantado}"  Grid.Column="1" Grid.Row="1"></DatePicker>
+                        <BoxView Color="Green" HeightRequest="4" VerticalOptions="EndAndExpand" Grid.ColumnSpan="2" Grid.Row="1" ></BoxView>
+                        <Button Command="{Binding Source={x:Reference Jardin },Path=EliminarCommand}" CommandParameter="{Binding .}" Text="eliminar" Grid.Column="0" Grid.Row="2" BackgroundColor="Red" TextColor="White" Margin="0,0,0,8" HeightRequest="35" FontSize="Small" VerticalOptions="CenterAndExpand"></Button>
+                            <Button Command="{Binding Source={x:Reference Jardin },Path=VistaPlantaCommand}" CommandParameter="{Binding .}" Text="ver" Grid.Column="1" Grid.Row="2" BackgroundColor="DarkSlateGray" TextColor="White" Margin="0,0,0,8" HeightRequest="35" FontSize="Small" VerticalOptions="CenterAndExpand" ></Button>
+                            <BoxView Color="Green" HeightRequest="4" VerticalOptions="EndAndExpand" Grid.ColumnSpan="2" Grid.Row="2" ></BoxView>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Grid VerticalOptions="End"  Margin="2" HeightRequest="80">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                
+            </Grid.ColumnDefinitions>
+            <Image Source="icAgregar" Grid.Column="0" >
+                <Image.GestureRecognizers >
+                    <TapGestureRecognizer Command="{Binding NavegarAgregarCommand}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            
+
+            <Image Source="icFiltro" Grid.Column="1">
+                <Image.GestureRecognizers >
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" ></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            
+        </Grid>
+        
+    </StackLayout>
+</ContentPage>

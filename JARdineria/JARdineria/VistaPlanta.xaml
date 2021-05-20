@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JARdineria.VistaPlanta" BackgroundColor="Black">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="8,5" BackgroundColor="Black" Spacing="5">
+                <StackLayout.Resources>
+                    <Style TargetType="Label" >
+                        <Setter Property="Background" Value="black"></Setter>
+                        <Setter Property="TextColor" Value="Orange"></Setter>
+                        <Setter Property="HeightRequest" Value="25"></Setter>
+                        <Setter Property="FontAttributes" Value="Bold"></Setter>
+                        <Setter Property="Padding" Value="3"></Setter>
+                        <Setter Property="WidthRequest" Value="200"></Setter>
+                        <Setter Property="Opacity" Value="0.8"></Setter>
+                    </Style>
+                </StackLayout.Resources >
+                <Label Text="Nombre: " HorizontalOptions="Start" WidthRequest="65" HeightRequest="25" FontSize="15" />
+                <Label  Text="{Binding Nplanta.Nombre}" FontSize="80" TextColor="White" HeightRequest="100" Opacity="3" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  ></Label>
+                <Image Source="{ Binding Nplanta.Imagen}"   Aspect="Fill" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="130" WidthRequest="130" Margin="30"></Image>
+                <Label Text="{Binding Nplanta.Imagen}" FontSize="10" TextColor="White" Opacity="0.5" HorizontalTextAlignment="End"></Label>
+                <Label Text="Fecha del plantado:" Margin="0,-10,0,0"></Label>
+                <Label Text="{Binding Nplanta.FechaPlantado}"  TextColor="White"  ></Label>
+                <Label Text="Nota: "></Label>
+                <Label Text="{Binding Nplanta.Nota}" TextColor="White"></Label>
+                <Label></Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

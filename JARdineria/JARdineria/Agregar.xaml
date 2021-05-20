@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             x:Class="JARdineria.Agregar" Title="Agregar Planta">
+
+    
+    <StackLayout>
+    <Frame BackgroundColor="Green" HasShadow="True" HeightRequest="100" HorizontalOptions="FillAndExpand" Padding="0" Margin="0" >
+        
+    </Frame>
+        <Frame BackgroundColor="White" HasShadow="True" HeightRequest="500" HorizontalOptions="FillAndExpand">
+            <StackLayout BackgroundColor="White"  Padding="8,5"  Spacing="5" Margin="10,-70,10,-30">
+                <StackLayout.Resources>
+                    <Style TargetType="Label" >
+                        <Setter Property="Background" Value="green"></Setter>
+                        <Setter Property="TextColor" Value="White"></Setter>
+                        <Setter Property="HeightRequest" Value="25"></Setter>
+                        <Setter Property="FontAttributes" Value="Bold"></Setter>
+                        <Setter Property="Padding" Value="3"></Setter>
+                        <Setter Property="WidthRequest" Value="50"></Setter>
+                        <Setter Property="Opacity" Value="0.7"></Setter>
+                    </Style>
+                </StackLayout.Resources >
+                <Frame HasShadow="True" CornerRadius="10" Margin="0,0,0,10" >
+                    <Entry  Text="{Binding Nplanta.Nombre}" Placeholder="Nombre....."></Entry>
+                </Frame>
+                <Frame HasShadow="True" CornerRadius="10" Margin="0,0,0,10" >
+                    <DatePicker Format="dd 'de' MMMM 'del' yyyy " Date="{Binding Nplanta.FechaPlantado}"></DatePicker>
+                </Frame>
+                <Frame HasShadow="True" CornerRadius="10" Margin="0,0,0,10">
+                    <Entry Text="{Binding Nplanta.Imagen}" Placeholder="Imagen....."></Entry>
+                </Frame>
+                <Frame HasShadow="True" CornerRadius="10" Margin="0,0,0,10">
+                    <Entry Text="{Binding Nplanta.Nota}" Placeholder="Alguna nota....."></Entry>
+                </Frame>
+                <Button Text="Guardar" BorderWidth="2" BorderColor="Black" Command="{Binding AgregarCommand}" Margin="0" BackgroundColor="Green" TextColor="White" CharacterSpacing="4"></Button>
+                <Label Text="{Binding Error}" FontSize="10" HorizontalTextAlignment="Center" BackgroundColor="White" TextColor="Red" HeightRequest="50"></Label>
+            </StackLayout>
+        </Frame>
+       
+    </StackLayout>
+</ContentPage>

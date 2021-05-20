@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JARdineria.MainPage" Title="MI JARDIN" IconImageSource="Logo.jpg" >
+    
+    <StackLayout VerticalOptions="Center"  >
+        <StackLayout.GestureRecognizers >
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" ></TapGestureRecognizer>
+        </StackLayout.GestureRecognizers>
+        <Frame BackgroundColor="#3E8508" Padding="24" CornerRadius="30" HorizontalOptions="Center" >
+            <Grid >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width=".2*"></ColumnDefinition>
+                    <ColumnDefinition Width=".5*"></ColumnDefinition>
+                    <ColumnDefinition Width=".2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" >
+                    <Image Source="Logo.jpg" HorizontalOptions="Center" WidthRequest="40"  ></Image>
+                </StackLayout>
+                <Label Text="MI JARDIN" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="25" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <StackLayout Grid.Column="2" >
+                    <Image Source="Sig.png"  HorizontalOptions="Center" WidthRequest="30" VerticalOptions="CenterAndExpand" ></Image>
+                </StackLayout>
+            </Grid>
+        </Frame>
+        <Label Text="B i e n v e n i d o" HorizontalOptions="CenterAndExpand" FontSize="Subtitle" Opacity="0.5"></Label>
+    </StackLayout>
+
+</ContentPage>
