@@ -41,7 +41,7 @@
                         </StackLayout>
                         <BoxView Grid.ColumnSpan="2" Grid.Row="1" Color="Green" HeightRequest="2" VerticalOptions="StartAndExpand"  Margin="20,0" Opacity="0.2"></BoxView>
                         <Label Text="Fecha de plantado: " Grid.Column="0" Grid.Row="1"></Label>
-                        <DatePicker Date="{Binding FechaPlantado}"  Grid.Column="1" Grid.Row="1"></DatePicker>
+                        <DatePicker Date="{Binding FechaPlantado}"  Grid.Column="1" Grid.Row="1" ></DatePicker>
                         <BoxView Color="Green" HeightRequest="4" VerticalOptions="EndAndExpand" Grid.ColumnSpan="2" Grid.Row="1" ></BoxView>
                         <Button Command="{Binding Source={x:Reference Jardin },Path=EliminarCommand}" CommandParameter="{Binding .}" Text="eliminar" Grid.Column="0" Grid.Row="2" BackgroundColor="Red" TextColor="White" Margin="0,0,0,8" HeightRequest="35" FontSize="Small" VerticalOptions="CenterAndExpand"></Button>
                             <Button Command="{Binding Source={x:Reference Jardin },Path=VistaPlantaCommand}" CommandParameter="{Binding .}" Text="ver" Grid.Column="1" Grid.Row="2" BackgroundColor="DarkSlateGray" TextColor="White" Margin="0,0,0,8" HeightRequest="35" FontSize="Small" VerticalOptions="CenterAndExpand" ></Button>
@@ -50,7 +50,7 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Grid VerticalOptions="End"  Margin="2" HeightRequest="80">
+        <Grid VerticalOptions="End"  Margin="2" HeightRequest="80" Background="green" Padding="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition ></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>

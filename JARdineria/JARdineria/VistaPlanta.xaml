@@ -3,8 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JARdineria.VistaPlanta" BackgroundColor="Black">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Padding="8,5" BackgroundColor="Black" Spacing="5">
+        <Grid>
+            <Frame BackgroundColor="Green" HasShadow="True" HeightRequest="100" HorizontalOptions="FillAndExpand" Padding="0" Margin="0" >
+                
+            </Frame>
+            <Frame BackgroundColor="#006400" HasShadow="True" HeightRequest="500" HorizontalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="#228b22"  Padding="10"  Spacing="5" Margin="10,10,10,30">
+                    <StackLayout.Resources>
+                        <Style TargetType="Label" >
+                            <Setter Property="Background" Value="green"></Setter>
+                            <Setter Property="TextColor" Value="White"></Setter>
+                            <Setter Property="HeightRequest" Value="25"></Setter>
+                            <Setter Property="FontAttributes" Value="Bold"></Setter>
+                            <Setter Property="Padding" Value="3"></Setter>
+                            <Setter Property="WidthRequest" Value="50"></Setter>
+                            <Setter Property="FontSize" Value="15"></Setter>
+                        </Style>
+                        
+                    </StackLayout.Resources >
+                    <Frame HasShadow="True" CornerRadius="10" Margin="0,0,0,10" BackgroundColor="Green">
+                        <Label  Text="{Binding Nplanta.Nombre}" HorizontalTextAlignment="Center" FontSize="25" Padding="0" HeightRequest="30"></Label>
+                    </Frame>
+                    <Frame HasShadow="True" CornerRadius="10" Margin="0,0,0,10" BackgroundColor="Green" >
+                        <DatePicker  Date="{Binding Nplanta.FechaPlantado}"   Format="dd 'de' MMMM 'del' yyyy" HorizontalOptions="Center" Opacity="1" TextColor="Aqua" IsEnabled="False"></DatePicker>
+                    </Frame>
+                    <Frame HasShadow="True" CornerRadius="10" Margin="0,0,0,10" BackgroundColor="Green">
+                        <Image Source="{Binding Nplanta.Imagen}"  Aspect="Fill" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="130" WidthRequest="130"></Image>
+                    </Frame>
+                    <Frame HasShadow="True" CornerRadius="10" Margin="0,0,0,10" BackgroundColor="Green">
+                        <Label Text="{Binding Nplanta.Nota}" HorizontalTextAlignment="Center" HeightRequest="1000"></Label>
+                    </Frame>
+                    
+                </StackLayout>
+            </Frame>
+        </Grid>
+        <!--<StackLayout>
+            <StackLayout Padding="8,5" BackgroundColor="black" Spacing="5">
                 <StackLayout.Resources>
                     <Style TargetType="Label" >
                         <Setter Property="Background" Value="black"></Setter>
@@ -26,6 +60,6 @@
                 <Label Text="{Binding Nplanta.Nota}" TextColor="White"></Label>
                 <Label></Label>
             </StackLayout>
-        </StackLayout>
+        </StackLayout>-->
     </ContentPage.Content>
 </ContentPage>

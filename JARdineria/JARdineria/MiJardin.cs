@@ -79,7 +79,7 @@ namespace JARdineria
                 {
                     Error += "Escriba el nombre de la planta";
                 }
-                if (Nplanta.FechaPlantado < DateTime.MinValue)
+                if (Nplanta.FechaPlantado.Date < DateTime.MinValue)
                 {
                     Error += "La fecha del plantado no puede ser esta";
                 }
@@ -124,7 +124,8 @@ namespace JARdineria
             {
                 viewPlanta = new VistaPlanta() { BindingContext = this };
             }
-            NuevaPlanta Clon = new NuevaPlanta() { Nombre = clon.Nombre, FechaPlantado = clon.FechaPlantado, Imagen = clon.Imagen, Nota = clon.Nota };
+            NuevaPlanta Clon = new NuevaPlanta() { Nombre = clon.Nombre, FechaPlantado = clon.FechaPlantado.Date, Imagen = clon.Imagen, Nota = clon.Nota };
+          
             Nplanta = Clon;
             posPlantaOriginal = Miplanta.IndexOf(clon);
             Application.Current.MainPage.Navigation.PushAsync(viewPlanta);
